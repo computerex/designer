@@ -1,0 +1,1 @@
+A utility that offers useful tools to designers such as color pickers/screenshots/etc
