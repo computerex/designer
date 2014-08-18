@@ -1,0 +1,14 @@
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\bin\Debug\Designer.exe
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\bin\Debug\Designer.pdb
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\obj\x86\Debug\Designer.Form1.resources
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\obj\x86\Debug\Designer.Properties.Resources.resources
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\obj\x86\Debug\Designer.csproj.GenerateResource.Cache
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\obj\x86\Debug\Designer.exe
+C:\Users\computerex\AppData\Local\Temporary Projects\Designer\obj\x86\Debug\Designer.pdb
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.exe
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.pdb
+C:\projects\designer\designer\Designer\bin\Debug\Designer.exe
+C:\projects\designer\designer\Designer\bin\Debug\Designer.pdb
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.Form1.resources
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.Properties.Resources.resources
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.csproj.GenerateResource.Cache
