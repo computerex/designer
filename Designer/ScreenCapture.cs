@@ -12,7 +12,7 @@ namespace Designer
         public ScreenCapture()
         {
         }
-        public static Image captureDesktopRegion(Point topleft, Point bottomright)
+        public static Bitmap captureDesktopRegion(Point topleft, Point bottomright)
         {
             int width = bottomright.X - topleft.X;
             int height = bottomright.Y - topleft.Y;

@@ -35,6 +35,8 @@ namespace Designer
         [DllImport("gdi32.dll")]
         public static extern int BitBlt(IntPtr hdcDest, int nXDest, int nYDest, int nwidth, int nheight, IntPtr hdcSrc, int nXSrc, int nYSrc, UInt32 dwRop);
         [DllImport("gdi32.dll")]
+        public static extern int StretchBlt(IntPtr hdcDest, int nXOriginDest, int nYOriginDest, int nWidthDest, int nHeightDest, IntPtr hdcSrc, int nXOriginSrc, int nYOriginSrc, int nWidthSrc, int nHeightSrc, UInt32 dwRop);
+        [DllImport("gdi32.dll")]
         public static extern int DeleteObject(IntPtr hobj);
         [DllImport("gdi32.dll")]
         public static extern int DeleteDC(IntPtr hdc);
@@ -42,6 +44,10 @@ namespace Designer
         public static extern IntPtr SelectObject(IntPtr hDC, IntPtr hobj);
         [DllImport("user32.dll")]
         public static extern IntPtr GetWindowDC(IntPtr hwnd);
+        [DllImport("user32.dll")]
+        public static extern IntPtr LoadCursor(IntPtr hInstance, int cursor);
+        [DllImport("user32.dll")]
+        public static extern IntPtr SetCursor(IntPtr handle);
 
         [StructLayout(LayoutKind.Sequential)]
         public struct POINT
@@ -68,5 +74,43 @@ namespace Designer
             }
         }
         
+        // hooking API
+        public delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr SetWindowsHookEx(int idHook,
+            LowLevelMouseProc lpfn, IntPtr hMod, uint dwThreadId);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        public static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode,
+            IntPtr wParam, IntPtr lParam);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        public static extern IntPtr GetModuleHandle(string lpModuleName);
+
+        public const int WH_MOUSE_LL = 14;
+        public enum MouseMessages
+        {
+            WM_LBUTTONDOWN = 0x0201,
+            WM_LBUTTONUP = 0x0202,
+            WM_MOUSEMOVE = 0x0200,
+            WM_MOUSEWHEEL = 0x020A,
+            WM_RBUTTONDOWN = 0x0204,
+            WM_RBUTTONUP = 0x0205
+        }
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MSLLHOOKSTRUCT
+        {
+            public POINT pt;
+            public uint mouseData;
+            public uint flags;
+            public uint time;
+            public IntPtr dwExtraInfo;
+        }
     }
 }

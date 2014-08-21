@@ -12,3 +12,5 @@ C:\projects\designer\designer\Designer\bin\Debug\Designer.pdb
 C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.Form1.resources
 C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.Properties.Resources.resources
 C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.csproj.GenerateResource.Cache
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.csprojResolveAssemblyReference.cache
+C:\projects\designer\designer\Designer\obj\x86\Debug\Designer.ColorPicker.resources
